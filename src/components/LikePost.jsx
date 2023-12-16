@@ -1,10 +1,12 @@
-import React from 'react';
-import LikeCounter from './RenderProps';
 
-const LikePost = ({ handleLikeCount, likeCounter, label }) => (
-  <div>
-    <button onClick={handleLikeCount}>Like {label} {likeCounter}</button>
-  </div>
-);
+import Hoc from './Hoc'
+ function LikePost(props) {
 
-export default LikeCounter(LikePost, 'Post');
+
+  return (
+    <div>
+      <button onClick={props.func}>Like Post {props.count}</button>
+    </div>
+  )
+}
+export default Hoc(LikePost)
